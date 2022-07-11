@@ -88,3 +88,25 @@ In this type of device you can:
 - `tv.channel_down()` - emulatuing Channel Down Button
 - `tv.volume_up()` - emulatuing Volume Up Button
 - `tv.volume_down()` - emulatuing Volume Down Button
+#### Custom buttons
+```python
+custom = api.get_device('secret')
+print(custom)
+
+Extended(is_favorite=False, id='esecret', name='Светильник', names=['Светильник'], room='Спальня', online=True, type='devices.types.other', external_id='secret', sensors=[], skill_id='T', capabilities=[CustomButton(name='Включи', instance='16567707109928'), CustomButton(name='Выключи', instance='1656773379813671'), CustomButton(name='Измени яркость', instance='16567753933715')], groups=[], wss_url='wss://push.yandex.ru/v2/subscribe/websocket...')
+```
+In this type of device you can:
+- `custom.use_custom('16567753933715')` - emulating yourcustom signal, argument - instance
+### api.get_smart_speakers()
+Returns a list of smart speakers
+```python
+speakers = api.get_smart_speakers()
+print(speakers)
+
+[Speaker(icon='https://avatars.mds.yandex.net/get-yandex-station/1/yandexstationicon/orig', id='1', name='Яндекс Станция', online=True, platform='yandexstation', screen_capable=True, screen_present=True), Speaker(icon='https://avatars.mds.yandex.net/get-yandex-station/1/unknowndeviceicon/orig', id='1', name='Яндекс Мини', online=True, platform='yandexmini', screen_capable=False, screen_present=False)]
+```
+### api.play_youtube_video(id, url)
+The function plays videos on YouTube on a smart speaker
+```python
+api.play_youtube_video('SMART_SPEAKER_ID', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+```
