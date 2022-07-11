@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/dacite-1.6.0-brightgreen)
 ## Installation
 ```
-$ python3 -m pip install yandex_quasar
+$ python3 -m pip install yandex-quasar==0.1
 ```
 ## Authorization
 My library uses cookie login - it's easier and more reliable.  
