@@ -54,3 +54,16 @@ print(socket)
 
 Extended(is_favorite=False, id='secret', name='Ночник', names=['Ночник'], room='Спальня', online=True, type='devices.types.light', external_id='secret', sensors=[Sensor(last_updated=datetime.datetime(2022, 7, 11, 17, 48, 52), instance='voltage', name='текущее напряжение', percent=None, status=None, value=233, type='devices.properties.float', unit='unit.volt'), Sensor(last_updated=datetime.datetime(2022, 7, 11, 17, 48, 52), instance='power', name='потребляемая мощность', percent=None, status=None, value=0, type='devices.properties.float', unit='unit.watt'), Sensor(last_updated=datetime.datetime(2022, 7, 11, 17, 48, 52), instance='amperage', name='потребление тока', percent=None, status=None, value=0, type='devices.properties.float', unit='unit.ampere')], skill_id='T', capabilities=[OnOffCapability(type='devices.capabilities.on_off', instance='on', value=True)], groups=[], wss_url='wss://push.yandex.ru/v2/subscribe/websocket..')
 ```
+In this type of device you can:
+- `socket.turn_on()` - turn on device
+- `socket.turn_off()` - turn off device
+
+#### Yandex Smart Remote Cotroller
+```python
+hub = api.get_device('secret')
+print(hub)
+
+Extended(is_favorite=False, id='secret', name='Пульт', names=['Пульт'], room='Спальня', online=True, type='devices.types.hub', external_id='secret', sensors=[], skill_id='T', capabilities=[], groups=[], wss_url='wss://push.yandex.ru/v2/subscribe/websocket...')
+```
+In this type of device you can:
+- `hub.get_linked()` - returns linked to remote controller devices
