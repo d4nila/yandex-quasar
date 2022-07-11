@@ -17,4 +17,4 @@ from quasar_api import Quasar
 api = Quasar('btfspace') # place here name of your file without .txt
 ```
 Now you can use any methods of the class (if you didn't get an error).
-## api.get_devices()
+### api.get_devices()
