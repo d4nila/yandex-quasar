@@ -67,3 +67,24 @@ Extended(is_favorite=False, id='secret', name='Пульт', names=['Пульт']
 ```
 In this type of device you can:
 - `hub.get_linked()` - returns linked to remote controller devices
+#### Sensor
+```python
+sensor = api.get_device('secret')
+print(sensor)
+
+Extended(is_favorite=False, id='secret', name='Датчик температуры', names=['Датчик температуры'], room='Спальня', online=True, type='devices.types.sensor', external_id='secret', sensors=[Sensor(last_updated=datetime.datetime(2022, 7, 11, 17, 55, 9), instance='temperature', name='температура', percent=None, status=None, value=28.4, type='devices.properties.float', unit='unit.temperature.celsius'), Sensor(last_updated=datetime.datetime(2022, 7, 11, 17, 55, 9), instance='humidity', name='влажность', percent=51, status='normal', value=51, type='devices.properties.float', unit='unit.percent'), Sensor(last_updated=datetime.datetime(2022, 7, 11, 17, 55, 9), instance='battery_level', name='уровень заряда', percent=100, status='normal', value=100, type='devices.properties.float', unit='unit.percent')], skill_id='secret', capabilities=[], groups=[], wss_url='wss://push.yandex.ru/v2/subscribe/websocket...')
+```
+#### TV
+```python
+tv = api.get_device('secret')
+print(tv)
+
+Extended(is_favorite=False, id='secret', name='Телевизор', names=['Телевизор'], room='Спальня', online=True, type='devices.types.media_device.tv', external_id='secret', sensors=[], skill_id='T', capabilities=[], groups=[], wss_url='wss://push.yandex.ru/v2/subscribe/websocket...')
+```
+In this type of device you can:
+- `tv.power()` - emulating Power button
+- `tv.set_channel(13)` - setting channel
+- `tv.channel_up()` - emulatuing Channel Up Button
+- `tv.channel_down()` - emulatuing Channel Down Button
+- `tv.volume_up()` - emulatuing Volume Up Button
+- `tv.volume_down()` - emulatuing Volume Down Button
